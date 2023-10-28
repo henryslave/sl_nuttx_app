@@ -1,0 +1,3 @@
+ifneq ($(CONFIG_EXTERNAL_CAN_FLASHER),)
+CONFIGURED_APPS += $(APPDIR)/external/can_flasher
+endif
