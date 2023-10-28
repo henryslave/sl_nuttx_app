@@ -1,0 +1,5 @@
+*.built
+*.dep
+*.depend
+*.o
+Kconfig
