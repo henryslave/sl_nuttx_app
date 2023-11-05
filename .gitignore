@@ -4,3 +4,6 @@
 *.o
 .kconfig
 Kconfig
+
+# Build folder
+build/
