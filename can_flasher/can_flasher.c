@@ -1,3 +1,10 @@
+/**
+ * @file can_flasher.c
+ * @brief Main file of can source project.
+ *
+ * @author Slave77 <henry.slave77@gmail.com>
+ */
+
 #include <nuttx/config.h>
 #include <stdio.h>
 #include <time.h>
@@ -5,7 +12,6 @@
 #include "can.h"
 
 
-#warning "2222222222222222222"
 
 static double TimeSpecToSeconds(struct timespec* ts){
     return (double)ts -> tv_sec + (double)ts->tv_sec / 1000000000.0;
