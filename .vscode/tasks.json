@@ -1,0 +1,57 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": " LIST TARGETS",
+            "type": "shell",
+            "options": {
+                "cwd": "../../nuttx"
+            },
+            "command": " ./tools/configure.sh -L | grep g474re",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": " CONFIGURE (can_flasher)",
+            "type": "shell",
+            "options": {
+                "cwd": "../../nuttx"
+            },
+            "command": " cmake -B ../apps/external/can_flasher/build -DBOARD_CONFIG=nucleo-g474re:can_flasher -GNinja",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": " BUILD (can_flasher)",
+            "type": "shell",
+            "options": {
+                "cwd": "../../nuttx"
+            },
+            "command": " cmake --build ../apps/external/can_flasher/build",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": " MENUCONFIG (can_flasher)",
+            "type": "shell",
+            "options": {
+                "cwd": "../../nuttx"
+            },
+            "command": " cmake --build ../apps/external/can_flasher/build -t menuconfig",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": " CLEAN (can_flasher)",
+            "type": "shell",
+            "options": {
+                "cwd": "../../nuttx"
+            },
+            "command": " cmake --build ../apps/external/can_flasher/build -t clean",
+            "problemMatcher": [],
+            "group": "build"
+        },
+    ]
+}
