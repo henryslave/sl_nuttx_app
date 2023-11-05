@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <time.h>
 
+#include "can.h"
+
+
+#warning "2222222222222222222"
+
 static double TimeSpecToSeconds(struct timespec* ts){
     return (double)ts -> tv_sec + (double)ts->tv_sec / 1000000000.0;
 }
@@ -15,6 +20,8 @@ int can_flasher_main(int argc, char *argv[])
     struct timespec start;
     struct timespec end;
     double elapsed_secs;
+
+    CanInit();
 
     int N = 10;
     int i = 1;
